@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./form.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Log in</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <form action="" name="Formfill" onsubmit="return validation()">
+                <h2>Log in</h2>
+                <p id="result">Head</p>
+                <div class="input-box">
+                    <i class='bx bxs-user'></i>
+                    <input type="text" name="Username" placeholder="Username">
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="button">
+                    <input type="submit" class="btn" value="Login">
+                </div>
+                <div class="group">
+                    <span><a href="#">Forget-Password</a></span>
+                </div>
+            </form>
+        </div>
+        
+        <div class="popup" id="popup">
+            <i class="fa-regular fa-circle-check" style="color: #00ff04;"></i>
+            <h2>Thank you</h2>
+            <p>You logged in successfully. Thanks!</p>
+            <a href="./regi.html"><button onclick="closeSlide()">OK</button></a>
+        </div>
+    </div>
+    
+    <script src="./log.js"></script>
+    
+</body>
+</html>

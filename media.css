@@ -1,0 +1,132 @@
+@media only screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column; 
+        margin: 0 20px;
+        margin-top: 50px;
+    }
+
+    .abt {
+        text-align: center;
+        color: whitesmoke;
+        margin-top: 50px;
+    }
+
+    .image-section {
+        height: 200px;
+        background-size: cover;
+    }
+
+    .Event-titel {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 50px;
+    }
+
+    .video-row {
+       margin-left: 40px;
+    }
+
+    .artists-sec {
+        padding: 10px;
+    }
+
+    .first-three-pic, .secound-three {
+        flex-direction: row;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto; 
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0; 
+    }
+
+    .home-pic img {
+        width: 100%;
+        height: auto;
+    }
+
+    .at-slider-header {
+        font-size: large;
+        padding: 5px;
+    }
+
+    .content-section {
+        padding: 10px; 
+    }
+
+    .video-row {
+        grid-template-rows: 1fr; 
+    }
+
+    .artists-sec {
+        margin-top: 30px;
+    }
+
+    .artists-imgs img {
+        width: 170px;
+        height: auto;
+        transition: transform 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+}
+
+
+@media only screen and (max-width: 480px) {
+    .navbar {
+        padding: 5px;
+    }
+
+    .navbar .logo a {
+        font-size: 24px;
+    }
+
+    .at-slider-header {
+        font-size: medium;
+    }
+
+    .video-row {
+        grid-template-columns: 1fr; 
+        margin-left: 13px;
+    }
+
+    .video-row video {
+        width: 90%;
+        margin-left: 16px;
+    }
+
+
+    .content-section h1 {
+        font-size: 24px; 
+    }
+
+    .content-section p {
+        font-size: 14px;
+    }
+
+    .artists-imgs img {
+        width: 100%;
+    }
+
+    .artists-imgs h3 {
+        font-size: 14px;
+    }
+
+    .footer-social a img {
+        width: 7%;
+        margin-left: 45px;
+        border-radius: 10px;
+    }
+}

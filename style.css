@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+/* Styling the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    width: 100%;
+    height: 95px;
+}
+
+/* Logo styling */
+.navbar .logo a {
+    color: #dd0c0c;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 55px;
+}
+
+/* Styling the navbar list */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+/* Styling each link */
+.navbar ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #dd0c0c;
+    font-weight: bold;
+}
+
+.logo p a:hover{
+    color: whitesmoke;
+}
+
+/* Home pic section */
+
+.home-pic {
+    position: relative;
+    text-align: center;
+}
+
+.home-pic img {
+    width: 100%;
+    height: auto;
+}
+
+/* Slider Header Container */
+.at-slider-header {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%; /* Adjust width as needed */
+    font-size: xx-large;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.abt{
+  text-align: center;
+  color: whitesmoke;
+  margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    max-width: 1233px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 60px;
+    margin-top: 50px;
+  }
+
+  .image-section {
+    flex: 1;
+    background-image: url('./photos/WhatsApp\ Image\ 2024-10-14\ at\ 12.53.57\ AM.jpeg'); /* Replace with actual image path */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content-section {
+    flex: 1.5;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content-section h1 {
+    font-size: 28px;
+    color:  #dd0c0c;
+    margin-bottom: 20px;
+  }
+
+  .content-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .Event-titel {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 100px;
+}
+
+.Event-titel .recmd-for-you h2 {
+    font-size: 32px;
+    color: whitesmoke;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.Event-titel .recmd-for-you span {
+    display: block;
+    font-size: 18px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+}
+
+.at-description p {
+    font-size: 16px;
+    color: #333;
+    font-style: italic;
+    margin: 0;
+}
+
+.video-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+    margin-left: 63px;
+    margin-top: 50px;
+  }
+  
+  /* Styling each video element */
+  .video-row video {
+    width: 85%;
+  }
+
+  .artists-sec {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 60px;
+  }
+  
+  .ar-titel h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color:  whitesmoke;
+    margin-bottom: 10px;
+  }
+  
+  .ar-description p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+
+  .art-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .first-three-pic, .secound-three {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .artists-imgs figure {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .artists-imgs img {
+    width: 270px; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 8px; /* Optional, for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .at-trip-content h3 {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+  }
+
+.artists-imgs:hover img {
+  transform: translateY(-10px); /* Moves the image up by 10px */
+}
+
+
+footer {
+  background-color: #333;
+  color: whitesmoke;
+  padding: 20px 0;
+}
+
+.sl p{
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.footer-social{
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: -38px;
+}
+
+.footer-social a img{
+  width: 3%;
+  margin-left: 45px;
+  border-radius: 10px;
+}
+
+.footer-contact {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
