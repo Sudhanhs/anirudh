@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Your Tickets</title>
+    <link rel="stylesheet" href="./ticket.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Booking Your Tickets</h1>
+        <form id="booking-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Select Location</label>
+                <select id="location" name="location" required>
+                    <option value="">Choose a location...</option>
+                    <option value="stadium">Bangalore</option>
+                    <option value="theater">Chennai</option>
+                    <option value="arena">Coimbatore</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seat-category">Select Seat Category</label>
+                <select id="seat-category" name="seat-category" required>
+                    <option value="">Choose a seat category...</option>
+                    <option value="vip">VIP - $200</option>
+                    <option value="regular">Regular - $100</option>
+                    <option value="economy">Economy - $50</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tickets">Number of Tickets:</label>
+                <input type="number" id="tickets" name="tickets" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <strong>Total Price: $<span id="total-price">0</span></strong>
+            </div>
+            <button type="submit">Book Tickets</button>
+        </form>
+    </div>
+
+    <div id="success-popup" class="popup">
+        <div class="popup-content">
+            <h2>Booking Successful!</h2>
+            <p>Your tickets have been booked successfully.</p>
+            <button id="home-button">Go to Home</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("booking-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get form data and store it as in the previous example
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const location = document.getElementById("location").value;
+            const seatCategory = document.getElementById("seat-category").value;
+            const tickets = parseInt(document.getElementById("tickets").value);
+
+            // Calculate total price
+            let pricePerTicket = seatCategory === "VIP" ? 200 : seatCategory === "Regular" ? 100 : 50;
+            const totalPrice = tickets * pricePerTicket;
+
+            const ticket = { name, email, location, seatCategory, tickets, totalPrice };
+            let ticketsList = JSON.parse(localStorage.getItem("ticketsList")) || [];
+            ticketsList.push(ticket);
+            localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
+
+            // Clear the form
+            this.reset();
+
+            // Show the success popup
+            document.getElementById("success-popup").style.display = "flex";
+        });
+
+        // Close the popup and redirect to home
+        document.getElementById("home-button").addEventListener("click", function () {
+            document.getElementById("success-popup").style.display = "none";
+            window.location.href = "index.html"; // Adjust URL as needed
+        });
+
+    </script>
+</body>
+
+</html>

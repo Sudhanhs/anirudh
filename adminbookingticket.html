@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Ticket Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #575757;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        .table-con{
+            width: 100%;
+            margin: 15px;
+        }
+
+        #tickets-table {
+            width: 100%;
+            height: max-content;
+            border-collapse: collapse;
+            margin-top: 20px
+        }
+
+        #tickets-table th,
+        #tickets-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #tickets-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="./admin.html">Dashboard</a></li>
+                <li><a href="./adminuser.html">Users</a></li>
+                <li><a href="./adminbookingticket.html">Booked Tickets</a></li>
+                <li><a href="./index.html">Logout</a></li>
+            </ul>
+        </aside>
+        <div class="table-con">
+            <h1>Admin Ticket Management</h1>
+            <table id="tickets-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Location</th>
+                        <th>Seat Category</th>
+                        <th>Tickets</th>
+                        <th>Total Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic content will be injected here -->
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            // Load and display tickets from localStorage
+            function loadTickets() {
+                const ticketsTableBody = document.querySelector("#tickets-table tbody");
+                ticketsTableBody.innerHTML = "";
+
+                const ticketsList = JSON.parse(localStorage.getItem("ticketsList")) || [];
+
+                ticketsList.forEach((ticket, index) => {
+                    const row = document.createElement("tr");
+
+                    row.innerHTML = `
+            <td>${ticket.name}</td>
+            <td>${ticket.email}</td>
+            <td>${ticket.location}</td>
+            <td>${ticket.seatCategory}</td>
+            <td>${ticket.tickets}</td>
+            <td>$${ticket.totalPrice}</td>
+            <td>
+                <button onclick="editTicket(${index})">Edit</button>
+                <button onclick="deleteTicket(${index})">Delete</button>
+            </td>
+        `;
+
+                    ticketsTableBody.appendChild(row);
+                });
+            }
+
+            // Delete ticket function
+            function deleteTicket(index) {
+                let ticketsList = JSON.parse(localStorage.getItem("ticketsList")) || [];
+                ticketsList.splice(index, 1);
+                localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
+                loadTickets();
+            }
+
+            // Edit ticket function
+            function editTicket(index) {
+                let ticketsList = JSON.parse(localStorage.getItem("ticketsList")) || [];
+                const ticket = ticketsList[index];
+
+                // Populate the form or display an edit interface for the selected ticket
+                // You can customize this part according to your requirements
+
+                // After editing, save and reload the table
+                ticketsList[index] = ticket; // Update with edited data
+                localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
+                loadTickets();
+            }
+
+            window.onload = loadTickets;
+
+        </script>
+</body>
+
+</html>
